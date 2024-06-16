@@ -7,10 +7,10 @@ This is a JSCAD package that generates honeycomb patterns.
 If you have published your package you can use it on the [jscad.app](https://jscad.app) website like so:
 
 ```javascript
-const { randomCube } = require("jscad-honeycomb");
+const { honeycomb } = require("jscad-honeycomb");
 
 function main() {
-  honeycomb({
+  return honeycomb({
     rows: 3,
     columns: 3,
     radius: 10,
