@@ -4,14 +4,20 @@ import viteLogo from "./assets/vite.svg";
 import jscadLogo from "./assets/jscad.png";
 import "./App.css";
 import { JSCADViewer } from "./components/JSCADViewer";
-import { randomCube } from "../lib/main";
+import { honeycomb } from "../lib/main";
 
 function App() {
-  const [length, setCount] = useState(10);
+  const [rows, setRows] = useState(3);
+  const [columns, setColumns] = useState(3);
+  const [gap, setGap] = useState(2);
 
   const solids = useMemo(() => {
-    return randomCube({ minSize: length, maxSize: length * 2 });
-  }, [length]);
+    return honeycomb({
+      rows,
+      columns,
+      gap,
+    });
+  }, [rows, columns, gap]);
 
   return (
     <>
@@ -29,8 +35,13 @@ function App() {
       <h1>Vite + React + JSCAD</h1>
       <JSCADViewer solids={solids} />
       <div className="card">
-        <button onClick={() => setCount((length) => length + 1)}>
-          length is {length}
+        <button onClick={() => setRows((rows) => rows + 1)}>Add Row</button>
+        <button onClick={() => setColumns((columns) => columns + 1)}>
+          Add Column
+        </button>
+        <button onClick={() => setGap((gap) => gap + 1)}>Increase Gap</button>
+        <button onClick={() => setGap((gap) => Math.max(0.1, gap - 1))}>
+          Decrease Gap
         </button>
         <p>
           Edit <code>lib/main.ts</code> and save to test HMR
