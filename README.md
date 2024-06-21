@@ -6,7 +6,7 @@ This is a JSCAD package that generates honeycomb patterns.
 
 ## Usage on jscad.app
 
-You can use this package on the [jscad.app](https://jscad.app) website like so:
+You can use this package on the [jscad.app](https://jscad.app/#data:application/gzip;base64,H4sIAHPpdWYAA0WOyw7CIBBF93zFpCuaqNEYN238GAQsmDJTeUQN4d/F1rS7OXdyH5IwRMhgCPVHkrtBgSt4/UzWa948ghRqvz6btmfsnlBGSwhOWOQtZAbVEJPHLYX/xCrTK3Rw3s0gaUwON/ZC2VTxdFx4EFMHl+U22g4m/rHU1sKYI5VGfdDviXwMdWWeF0Dpv1UWcN3FAAAA) website like so:
 
 ```javascript
 const { honeycomb } = require("jscad-honeycomb");
