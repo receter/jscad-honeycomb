@@ -18,11 +18,33 @@ function main() {
     radius: 10,
     gap: 5,
     height: 5,
+    // Optional: Render studs instead of mesh
+    invert: false,
+    // Optional: Fill rows/columns from edges
+    fill: {
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
+    }
   });
 }
 
 module.exports = { main };
 ```
+
+### Options
+
+| Option | Type | Default | Description |
+|Str|Type|Default|Description|
+|---|---|---|---|
+| `rows` | number | 3 | Number of rows in the grid |
+| `columns` | number | 3 | Number of columns in the grid |
+| `radius` | number | 10 | Radius of the hexagons |
+| `gap` | number | 5 | Gap between hexagons |
+| `height` | number | 5 | Height of the extrusion |
+| `invert` | boolean | false | If true, renders hexagonal studs. If false, renders a mesh with hexagonal holes. |
+| `fill` | object | {} | Object specifying number of rows/columns to fill (make solid) from edges. Keys: `top`, `bottom`, `left`, `right`. Ignored if `invert` is true. |
 
 ### Preview
 
